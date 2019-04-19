@@ -84,7 +84,6 @@ def lp_minmax(x, grad_oracle, k, group_indicator, group_targets):
     m.optimize()
     return np.array([v[i].x for i in range(len(v))])
 
-
 def rounding(x):
     '''
     Rounding algorithm that does not require decomposition of x into bases
@@ -96,8 +95,8 @@ def rounding(x):
     x = x.copy()
     for t in range(len(x)-1):
         if x[i] == 0 and x[j] == 0:
-            i = i + 1
-        if x[i] + x[j] < 1:
+            i = max((i,j)) + 1
+        elif x[i] + x[j] < 1:
             if random.random() < x[i]/(x[i] + x[j]):
                 x[i] = x[i] + x[j]
                 x[j] = 0
