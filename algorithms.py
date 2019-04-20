@@ -79,7 +79,8 @@ def lp_minmax(x, grad_oracle, k, group_indicator, group_targets):
     m.addConstr(gp.quicksum(v) <= k)
     g = grad_oracle(x, 5000)
     for i in range(len(group_targets)):
-        m.addConstr(obj <= gp.quicksum(v[j]*g[j, i] for j in range(len(v)))/group_targets[i])
+        if group_targets[i] > 0:
+            m.addConstr(obj <= gp.quicksum(v[j]*g[j, i] for j in range(len(v)))/group_targets[i])
     m.setObjective(obj, gp.GRB.MAXIMIZE)
     m.optimize()
     return np.array([v[i].x for i in range(len(v))])
