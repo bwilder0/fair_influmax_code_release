@@ -208,7 +208,7 @@ def maxmin_algo(grad_oracle, val_oracle, threshold, k, group_indicator, num_iter
 #        print(target)
         group_targets = np.zeros(group_indicator.shape[1])
         group_targets[:] = target
-        x = algo(grad_oracle, val_oracle, threshold, k, group_indicator, group_targets, num_iter, solver)
+        x = algo(grad_oracle, val_oracle, threshold, k, group_indicator, group_targets, num_iter, solver)[1:]
         vals = val_oracle(x.mean(axis=0), 1000)
         if vals.min() > target:
             lb = target
