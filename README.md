@@ -1,12 +1,12 @@
 # Overview
 This repository contains code for the paper:
 
-Alan Tsang*, Bryan Wilder*, Eric Rice, Milind Tambe, Yair Zick. Group-Fairness in Influence Maximization. [[arXiv]](https://arxiv.org/abs/1903.00967). 2019.
+Alan Tsang*, Bryan Wilder*, Eric Rice, Milind Tambe, Yair Zick. Group-Fairness in Influence Maximization. IJCAI 2019. [[arXiv]](https://arxiv.org/abs/1903.00967). 
 ```
-@article{tsang2019group,
+@inproceedings{tsang2019group,
   title={Group-Fairness in Influence Maximization},
   author={Tsang, Alan and Wilder, Bryan and Rice, Eric and Tambe, Milind and Zick, Yair},
-  journal={arXiv preprint arXiv:1903.00967},
+  booktitle={International Joint Conference on Artificial Intelligence},
   year={2019}
 }
 ```
